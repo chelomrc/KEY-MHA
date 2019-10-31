@@ -1,0 +1,152 @@
+<div class="row animated fadeIn">
+
+    <div class="col-lg-12">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Reserva: {{ reserva.nombre }}</h3>
+            <hr class="m-t-0 m-b-40">
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarReserva(f)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nombres</label>
+                            <input [(ngModel)]="reserva.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Apellidos</label>
+                            <input [(ngModel)]="reserva.apellido" name="apellido" type="text" class="form-control" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Fecha de Ingreso</label>
+                            <input [(ngModel)]="fechaIn" name="fechaIn" type="text" bsDatepicker [bsValue]="bsValueIn" [bsConfig]="{ isAnimated: true, adaptivePosition: true, containerClass: 'theme-dark-blue' }" class="form-control" autocomplete="off" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Fecha de Salida</label>
+                            <input [(ngModel)]="fechaOut" name="fechaOut" type="text" bsDatepicker [bsValue]="bsValueOut" [bsConfig]="{ isAnimated: true, adaptivePosition: true, containerClass: 'theme-dark-blue' }" class="form-control" autocomplete="off" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Hora de Ingreso</label>
+                            <input [(ngModel)]="reserva.horaIn" name="horaIn" type="time" class="form-control" placeholder="Fecha de Ingreso" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Hora de Salida</label>
+                            <input [(ngModel)]="reserva.horaOut" name="horaOut" type="time" class="form-control" placeholder="Fecha de Ingreso" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input [(ngModel)]="reserva.email" name="email" type="text" class="form-control" placeholder="Correo electrónico">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Teléfono / Celular</label>
+                            <input [(ngModel)]="reserva.telefono" name="telefono" type="text" class="form-control" placeholder="Teléfono" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tarjeta de Crédito</label>
+                            <input [(ngModel)]="reserva.tipoTarjeta" name="tipoTarjeta" type="text" class="form-control" placeholder="Tarjeta de Crédito">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Número de Tarjeta</label>
+                            <input [(ngModel)]="reserva.numeroTarjeta" name="numeroTarjeta" type="text" class="form-control" placeholder="Número de Tarjeta">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Empresa / Institución</label>
+                            <input [(ngModel)]="reserva.empresa" name="empresa" type="text" class="form-control" placeholder="Empresa o Institución">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Teléfono Empresa</label>
+                            <input [(ngModel)]="reserva.telefonoEmpresa" name="telefonoEmpresa" type="text" class="form-control" placeholder="Teléfono de Empresa">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Reserva tomada por:</label>
+                            <input [(ngModel)]="usuarioReserva" name="usuario" type="text" class="form-control" placeholder="Usuario Reserva" disabled="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Fecha y hora de Reserva</label>
+                            <input [(ngModel)]="fechaReserva" type="text" bsDatepicker name="fechaReserva" class="form-control" placeholder="Fecha y hora" disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tipo de Habitación</label>
+                            <input [(ngModel)]="reserva.tipoHabitacion" name="tipoHabitacion" type="text" class="form-control" placeholder="Tipo de Habitación">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Observaciones</label>
+                            <input [(ngModel)]="reserva.observaciones" name="observaciones" type="text" class="form-control" placeholder="Observaciones">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                    <i class="fa fa-save"></i>
+                    Guardar
+                </button>
+                <a routerLink="/reservas" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="form-group">
+        <label>Hospital</label>
+        <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" class="form-control" required>
+          <option value="">Seleccione Hospital</option>
+          <option *ngFor="let hospital of hospitales" [value]="hospital._id">
+            {{ hospital.nombre }}
+          </option>
+        </select>
+
+    </div> -->

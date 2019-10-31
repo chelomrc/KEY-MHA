@@ -1,0 +1,69 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarHabitacion( input.value )" type="text" class="form-control" placeholder="Buscar habitación...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button (click)="crearHabitacion()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Crear Habitación
+                </button>
+                </div>
+
+                <h3 class="card-title">Habitaciones registradas ( <small> {{ _habitacionService.totalHabitaciones }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Habitación</th>
+                            <th>Tipo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let habitacion of habitaciones">
+                            <td>
+                                <img (click)="actualizarImagen( habitacion )" [src]="habitacion.img | imagen:'habitacion'" class="img-50 pointer">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="habitacion.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de la habitación">
+                            </td>
+                            <td>
+                                <select [(ngModel)]="habitacion.tipo" name="tipo" class="form-control" required>
+                                <option *ngIf="!habitacion.tipo"  value="">Seleccione Tipo</option>
+                                <option *ngFor="let tipo of tipoHabitacion" >
+                                  {{tipo}}
+                                </option>
+                              </select>
+                            </td>
+                            <td>
+                                <button (click)="guardarHabitacion( habitacion )" class="btn btn-primary">
+                              <i class="fa fa-save"></i>
+                            </button>
+
+                                <button (click)="borrarHabitacion( habitacion )" class="btn btn-danger">
+                              <i class="fa fa-trash-o"></i>
+                            </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
