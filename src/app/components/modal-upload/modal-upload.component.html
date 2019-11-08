@@ -1,4 +1,4 @@
-<div class="fondo-negro animated fadeIn" [ngClass]="_modalUploadService.oculto">
+<!-- <div class="fondo-negro animated fadeIn" [ngClass]="_modalUploadService.oculto">
 
     <div class="modal" style="display: block;" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -21,6 +21,403 @@
 
 
                 </div>
+                <div class="modal-footer">
+                    <button (click)="subirImagen()" [disabled]="!imagenTemp" type="button" class="btn btn-primary">Subir imagen</button>
+                    <button (click)="cerrarModal()" type="button" class="btn btn-secondary">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->
+
+<div class="fondo-negro animated fadeIn" [ngClass]="_modalUploadService.oculto">
+
+
+    <div class="modal " style="display: block;" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content">
+
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-header">
+                                    <th>Habitación: </th>
+                                    <td> &nbsp; 104 (tarifa estántar)</td>
+                                </h4>
+
+                                <div class="card-body">
+                                    <div>
+                                        <th>Estado 104: &nbsp;</th>
+                                        <td>
+                                            <select name="estado" class="form-control ">
+                                              <option value="">Seleccione Estado</option>
+                                            </select>
+                                        </td>
+
+                                    </div>
+                                    <hr>
+                                    <ul class="nav nav-pills  m-b-30">
+                                        <li class=" nav-item">
+                                            <a href="#navpills-1" class="nav-link active" data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-book"></i> Reserva</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                            <a href="#navpills-2" class="nav-link " data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-key"></i> Habitaciones</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                            <a href="#navpills-3" class="nav-link " data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-group"></i> Huéspedes</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                            <a href="#navpills-4" class="nav-link " data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-glass"></i> Servicios</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                            <a href="#navpills-5" class="nav-link " data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-money"></i> Cobros</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                            <a href="#navpills-6" class="nav-link " data-toggle="tab" aria-expanded="true">
+                                                <i class="fa fa-list"></i> Facturación</a>
+                                        </li>
+
+
+                                    </ul>
+                                    <div class="tab-content br-n pn">
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** RESERVA ********** -->
+                                        <!-- ============================================================== -->
+
+                                        <div id="navpills-1" class="tab-pane active" aria-expanded="true">
+                                            <div class="row ">
+                                                <div class="card col-md-12">
+
+                                                    <table class="table table-striped table-bordered">
+                                                        <thead style="display: none">
+                                                            <tr>
+                                                                <th class="col-md-2"></th>
+                                                                <th class="col-md-8"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Realizada</th>
+                                                                <td>18/12/2019 (Usuario reserva: Empleado)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Nombres y apellidos</th>
+                                                                <td>FRANZ MARCELO RODRIGUEZ</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Correo Electrónico</th>
+                                                                <td>fmrodriguezc@gmail.com</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Teléfono</th>
+                                                                <td>44444444</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Fecha de llegada</th>
+                                                                <td>Lunes, 4 de Noviembre de 2019</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Fecha de salida</th>
+                                                                <td>Lunes, 10 de Noviembre de 2019</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Comentarios Cliente</th>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Habitaciones</th>
+                                                                <td>
+                                                                    <div>
+                                                                        <!-- <table class="habitaciones"> -->
+                                                                        <table class="table ">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Código</th>
+                                                                                    <th>Tarifa</th>
+                                                                                    <th>Precio estancia</th>
+                                                                                    <th>Huéspedes</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <!--    Mostramos los datos de las habitaciones -->
+                                                                                <!-- ngRepeat: booking in reservation.bookings -->
+                                                                                <tr>
+                                                                                    <td>SIMPLE</td>
+                                                                                    <td>Tarifa Estándar</td>
+                                                                                    <!--<td>{{ booking.nights.length * booking.avgNightPrice | formatCurrency }}</td>-->
+                                                                                    <td>200,00 €</td>
+                                                                                    <td>1</td>
+                                                                                </tr>
+                                                                                <!-- end ngRepeat: booking in reservation.bookings -->
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Empresa/Institución</th>
+                                                                <td>MAGRI TURISMO</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Teléfono Empresa</th>
+                                                                <td>2403020</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th><i class="fa fa-credit-card"></i> Tarjeta de crédito</th>
+                                                                <td>Tipo tarjeta y número</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Notas de reserva</th>
+                                                                <th>Nueva Nota <br>
+                                                                    <input name="observaciones" type="text" class="form-control">
+                                                                </th>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-success waves-effect waves-light m-r-10" type="submit"> CERRAR </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** HABITACIONES ********** -->
+                                        <!-- ============================================================== -->
+
+
+                                        <div id="navpills-2" class="tab-pane" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="card col-md-12">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-default">
+                                                            <tr>
+                                                                <th> Habitación </th>
+                                                                <th> Estancia </th>
+                                                                <th> Huespedes </th>
+                                                                <th> Noches </th>
+                                                                <th> Total </th>
+                                                                <th> Acciones </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Realizada</td>
+                                                                <td>12/10/2019 - 18/10/2019</td>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>200 Bs.</td>
+                                                                <td align="center">
+                                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div align="center">
+                                                        <button class="btn btn-success waves-effect waves-light " type="submit">
+                                            <i class="fa fa-plus"></i> Agregar Habitaciones </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** HUESPEDES ********** -->
+                                        <!-- ============================================================== -->
+
+                                        <div id="navpills-3" class="tab-pane" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="card col-md-12">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-default">
+                                                            <tr>
+                                                                <th> Huésped </th>
+                                                                <th> Habitación </th>
+                                                                <th> Acciones </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>GARY RODRIGUEZ</td>
+                                                                <td>
+                                                                    <select name="estado" class="form-control ">
+                                                        <option value="">Habitación</option>
+                                                    </select>
+                                                                </td>
+                                                                <td align="center">
+                                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div align="center">
+                                                        <button class="btn btn-success waves-effect waves-light " type="submit">
+                                            <i class="fa fa-plus"></i> Agregar Huésped </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** SERVICIOS ********** -->
+                                        <!-- ============================================================== -->
+
+                                        <div id="navpills-4" class="tab-pane" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="card col-md-12">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-default">
+                                                            <tr>
+                                                                <th> Habitación </th>
+                                                                <th> Estancia </th>
+                                                                <th> Huespedes </th>
+                                                                <th> Noches </th>
+                                                                <th> Total </th>
+                                                                <th> Acciones </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Realizada</td>
+                                                                <td>12/10/2019 - 18/10/2019</td>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>200 Bs.</td>
+                                                                <td align="center">
+                                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div align="center">
+                                                        <button class="btn btn-success waves-effect waves-light " type="submit">
+                                            <i class="fa fa-plus"></i> Agregar Servicio </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** COBROS ********** -->
+                                        <!-- ============================================================== -->
+
+                                        <div id="navpills-5" class="tab-pane" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="card col-md-12">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-default">
+                                                            <tr>
+                                                                <th> Habitación </th>
+                                                                <th> Estancia </th>
+                                                                <th> Huespedes </th>
+                                                                <th> Noches </th>
+                                                                <th> Total </th>
+                                                                <th> Acciones </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Realizada</td>
+                                                                <td>12/10/2019 - 18/10/2019</td>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>200 Bs.</td>
+                                                                <td align="center">
+                                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div align="center">
+                                                        <button class="btn btn-success waves-effect waves-light " type="submit">
+                                            <i class="fa fa-plus"></i> Agregar Cobro </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- ============================================================== -->
+                                        <!-- ********** FACTURACION ********** -->
+                                        <!-- ============================================================== -->
+
+                                        <div id="navpills-6" class="tab-pane" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="card col-md-12">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-default">
+                                                            <tr>
+                                                                <th> Habitación </th>
+                                                                <th> Estancia </th>
+                                                                <th> Huespedes </th>
+                                                                <th> Noches </th>
+                                                                <th> Total </th>
+                                                                <th> Acciones </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Realizada</td>
+                                                                <td>12/10/2019 - 18/10/2019</td>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>200 Bs.</td>
+                                                                <td align="center">
+                                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-bars"></i>
+                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <div align="center">
+                                                        <button class="btn btn-success waves-effect waves-light " type="submit">
+                                            <i class="fa fa-plus"></i> Agregar Huésped </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
                 <div class="modal-footer">
                     <button (click)="subirImagen()" [disabled]="!imagenTemp" type="button" class="btn btn-primary">Subir imagen</button>
                     <button (click)="cerrarModal()" type="button" class="btn btn-secondary">Cerrar</button>

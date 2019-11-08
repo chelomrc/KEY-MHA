@@ -1,0 +1,146 @@
+<div class="row animated fadeIn">
+
+    <div class="col-lg-12">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Cliente: {{ cliente.nombre }}</h3>
+            <hr class="m-t-0 m-b-40">
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarCliente(f)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nombres</label>
+                            <input [(ngModel)]="cliente.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Apellidos</label>
+                            <input [(ngModel)]="cliente.apellido" name="apellido" type="text" class="form-control" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Genero</label>
+                            <select [(ngModel)]="cliente.genero" name="genero" class="form-control" required>
+                                <option value="">Seleccione Genero</option>
+
+                                <option> HOMBRE </option>
+                                <option> MUJER </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Edad</label>
+                            <input [(ngModel)]="cliente.edad" name="edad" type="number" class="form-control" placeholder="Edad" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Teléfono / Celular</label>
+                            <input [(ngModel)]="cliente.telefono" name="telefono" type="text" class="form-control" placeholder="Telefono">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input [(ngModel)]="cliente.email" name="email" type="text" class="form-control" placeholder="Correo Electrónico">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tipo de Documento</label>
+                            <input [(ngModel)]="cliente.tipoDocumento" name="tipoDocumento" type="text" class="form-control" placeholder="Tipo de Documento">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Documento de Identificación</label>
+                            <input [(ngModel)]="cliente.documento" name="documento" type="text" class="form-control" placeholder="Documento de Identidad">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nacionalidad</label>
+                            <input [(ngModel)]="cliente.nacionalidad" name="nacionalidad" type="text" class="form-control" placeholder="Nacionalidad">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input [(ngModel)]="cliente.direccion" name="direccion" type="text" class="form-control" placeholder="Dirección">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Profesión</label>
+                            <input [(ngModel)]="cliente.profesion" name="profesion" type="text" class="form-control" placeholder="Profesión">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Estado Civil</label>
+                            <input [(ngModel)]="cliente.estadoCivil" name="estadoCivil" type="text" class="form-control" placeholder="Estado Civil">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Tiene Equipaje</label>
+                            <select [(ngModel)]="cliente.tieneEquipaje" name="tieneEquipaje" class="form-control" required>
+                                <option value="">Tiene Equipaje?</option>
+                                <option> SI </option>
+                                <option> NO </option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Observaciones</label>
+                            <input [(ngModel)]="cliente.observaciones" name="observaciones" type="text" class="form-control" placeholder="Observaciones">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                  <i class="fa fa-save"></i>
+                  Guardar
+              </button>
+                <a routerLink="/clientes" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- <div class="form-group">
+      <label>Hospital</label>
+      <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" class="form-control" required>
+        <option value="">Seleccione Hospital</option>
+        <option *ngFor="let hospital of hospitales" [value]="hospital._id">
+          {{ hospital.nombre }}
+        </option>
+      </select>
+
+  </div> -->

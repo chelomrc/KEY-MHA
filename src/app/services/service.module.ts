@@ -15,6 +15,9 @@ import {
   MedicoService,
   HabitacionService,
   ReservaService,
+  ClienteService,
+  ProductoService,
+  ServiciosLavanderiaService,
   VerificaTokenGuard
  } from './service.index';
 
@@ -37,6 +40,9 @@ import {
     MedicoService,
     HabitacionService,
     ReservaService,
+    ClienteService,
+    ProductoService,
+    ServiciosLavanderiaService,
     VerificaTokenGuard
   ],
   declarations: []

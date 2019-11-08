@@ -23,6 +23,11 @@ import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
 import { HabitacionesComponent } from './habitaciones/habitaciones.component';
 import { ReservasComponent } from './reservas/reservas.component';
 import { ReservaComponent } from './reservas/reserva.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteComponent } from './clientes/cliente.component';
+import { ProductosComponent } from './productos/productos.component';
+import { ServiciosLavaderiaComponent } from './servicios-lavaderia/servicios-lavaderia.component';
+import { RegistrosComponent } from './registros/registros.component';
 
 
 const pagesRoutes: Routes = [
@@ -51,9 +56,14 @@ const pagesRoutes: Routes = [
     { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Médico' } },
 
     // Mantenimientos hotel
+    { path: 'registros', component: RegistrosComponent, data: { titulo: 'Actualizar Registros' } },
     { path: 'habitaciones', component: HabitacionesComponent, data: { titulo: 'Actualizar Habitaciones' } },
-    { path: 'reservas', component: ReservasComponent, data: { titulo: 'Actualizar Reservas' } },
+    { path: 'reservas', component: ReservasComponent, data: { titulo: 'Mantenimiento Reservas' } },
     { path: 'reserva/:id', component: ReservaComponent, data: { titulo: 'Actualizar Reserva' } },
+    { path: 'clientes', component: ClientesComponent, data: { titulo: 'Mantenimiento Clientes' } },
+    { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Actualizar Cliente' } },
+    { path: 'productos', component: ProductosComponent, data: { titulo: 'Mantenimiento Productos' } },
+    { path: 'servicioslavanderia', component: ServiciosLavaderiaComponent, data: { titulo: 'Mantenimiento Servicios Lavandería' } },
 
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];

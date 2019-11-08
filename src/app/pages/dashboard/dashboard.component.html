@@ -1,3 +1,69 @@
-<p>
-  dashboard works!
-</p>
+<div class="row animated fadeIn " *ngIf=" ">
+
+    <div class="col-sm-12 ">
+
+        <div class="alert alert-warning text-center ">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x "></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn" style="background: white;" *ngIf="!cargando ">
+    <div class="col-12 ">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <button (click)="desplazarDias(-15)" type="button" class="btn btn-outline-success" style="margin-right: 3px;">-15 días</button>
+                    <button (click)="desplazarDias(-7)" type="button" class="btn btn-outline-success" style="margin-right: 3px;">-7 días</button>
+                    <button (click)="desplazarDias(0)" type="button" class="btn btn-info" style="margin-right: 3px;">hoy</button>
+                    <button (click)="desplazarDias(7)" type="button" class="btn btn-outline-success" style="margin-right: 3px;">+7 días</button>
+                    <button (click)="desplazarDias(15)" type="button" class="btn btn-outline-success" style="margin-right: 3px;">+15 días</button>
+                    <!-- <input #input (keyup)="buscarUsuario( input.value )" type="text" class="form-control" placeholder="Buscar usuario..."> -->
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div style="margin-left: 2%; ">
+                <span class="badge badge-secondary ">Sin Confirmar</span>
+                <span class="badge badge-success ">Confirmada</span>
+                <span class="badge badge-danger ">Check-in</span>
+                <span class="badge badge-primary ">Check-out</span>
+            </div>
+        </div>
+        <!--Table-->
+        <table id="tablePreview" class="table table-bordered table-striped ">
+            <!--Table head-->
+            <thead class=" thead-inverse ">
+
+                <tr>
+                    <th>Habitación</th>
+                    <th style="text-align: center;" *ngFor="let dia of arregloDias"> {{ dia | date: 'EEEEEE' }} <br> {{ dia | date: 'dd' }} </th>
+                </tr>
+            </thead>
+            <!--Table head-->
+            <!--Table body-->
+            <tbody>
+                <tr *ngFor="let habitacion of habitaciones">
+                    <td style="font-size:14px;">
+                        <i class="fa fa-square pointer" style="color:rgb(28, 160, 28);"> &nbsp;&nbsp;</i>
+                        <strong class="card-tittle">{{' ' + habitacion.nombre + ' ' }} </strong> {{ habitacion.tipo }}
+
+                    </td>
+                    <td *ngFor="let dia of arregloDias"> </td>
+
+
+                </tr>
+            </tbody>
+            <!--Table body-->
+        </table>
+        <!--Table-->
+
+    </div>
+</div>

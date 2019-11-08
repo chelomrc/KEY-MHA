@@ -68,38 +68,6 @@ export class HabitacionesComponent implements OnInit {
     .subscribe( () => this.cargarHabitaciones());
   }
 
-  // crearHabitacion() {
-
-  //   Swal.mixin({
-  //     input: 'text',
-  //     confirmButtonText: 'Next &rarr;',
-  //     showCancelButton: true,
-  //     progressSteps: ['1', '2']
-  //   }).queue([
-  //     {
-  //       title: 'Crear Habitacion',
-  //       text: 'Ingrese nombre/número de Habitación'
-  //     },
-  //     {
-  //       title: 'Crear Habitacion',
-  //       text: 'Ingrese nombre/número de Habitación'
-  //     },
-  //     'Question 2'
-  //   ]).then((result) => {
-  //     console.log(result);
-  //     if (result.value) {
-  //       Swal.fire({
-  //         title: 'All done!',
-  //         html:
-  //           'Your answers: <pre><code>' +
-  //             JSON.stringify(result.value) +
-  //           '</code></pre>',
-  //         confirmButtonText: 'Lovely!'
-  //       });
-  //     }
-  //   });
-
-  // }
 
   crearHabitacion() {
 

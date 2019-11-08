@@ -33,16 +33,13 @@ export class ReservaComponent implements OnInit {
   usuario:  Usuario;
 
   constructor(
-
-    private bsLocaleService: BsLocaleService,
-
-    public _reservaService: ReservaService,
     public router: Router,
     public activatedRoute: ActivatedRoute,
     public _modalUploadService: ModalUploadService,
-    public _usuarioService: UsuarioService
+    public _usuarioService: UsuarioService,
+    public _reservaService: ReservaService,
 
-
+    private bsLocaleService: BsLocaleService
   ) {
     this.usuario = this._usuarioService.usuario;
     this.usuarioReserva = this.usuario.nombre;

@@ -1,3 +1,8 @@
+
+export { ServiciosLavanderiaService } from './serviciosLavanderia/servicios-lavanderia.service';
+
+export { ProductoService } from './producto/producto.service';
+export { ClienteService } from './cliente/cliente.service';
 export { ReservaService } from './reserva/reserva.service';
 export { HabitacionService } from './habitacion/habitacion.service';
 

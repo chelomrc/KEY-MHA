@@ -1,0 +1,70 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarProducto( input.value )" type="text" class="form-control" placeholder="Buscar producto...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button (click)="crearProducto()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                  <i class="fa fa-plus"></i>
+                  Crear Producto
+                </button>
+                </div>
+
+                <h3 class="card-title">Productos registrados ( <small> {{ _productoService.totalProductos }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <!-- <th>Costo</th> -->
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let producto of productos; let i=index">
+                            <td>
+                                {{ numeroProducto + i}}
+                            </td>
+                            <td>
+                                <input [(ngModel)]="producto.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del producto">
+                            </td>
+                            <td>
+                                <input [(ngModel)]="producto.precio" name="precio" type="text" class="form-control" placeholder="Precio">
+                            </td>
+                            <!-- <td>
+                                <input [(ngModel)]="producto.costo" name="costo" type="text" class="form-control" placeholder="Costo">
+                            </td> -->
+                            <td>
+                                <button (click)="guardarProducto( producto )" class="btn btn-primary">
+                                  <i class="fa fa-save"></i>
+                                </button>
+
+                                <button (click)="borrarProducto( producto )" class="btn btn-danger">
+                                  <i class="fa fa-trash-o"></i>
+
+                                </button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

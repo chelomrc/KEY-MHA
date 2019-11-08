@@ -37,6 +37,11 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { ReservaComponent } from './reservas/reserva.component';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ClienteComponent } from './clientes/cliente.component';
+import { ProductosComponent } from './productos/productos.component';
+import { ServiciosLavaderiaComponent } from './servicios-lavaderia/servicios-lavaderia.component';
+import { RegistrosComponent } from './registros/registros.component';
 
 
 @NgModule({
@@ -59,7 +64,12 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
         BusquedaComponent,
         HabitacionesComponent,
         ReservasComponent,
-        ReservaComponent
+        ReservaComponent,
+        ClientesComponent,
+        ClienteComponent,
+        ProductosComponent,
+        ServiciosLavaderiaComponent,
+        RegistrosComponent
     ],
     exports: [
         DashboardComponent,
